@@ -1,0 +1,1349 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather&subset=latin);
+@-ms-viewport {
+  width: device-width;
+}
+@-o-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+/* line 21, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+* {
+  font-family: 'Verdana';
+  font-weight: 300;
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+}
+
+/* line 28, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+b, u, q {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* line 32, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 36, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+p {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  margin: 0;
+}
+
+/* line 41, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 44, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+br {
+  content: "";
+  display: block;
+  margin: 10px 0;
+}
+
+/* line 49, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+h3 {
+  font-size: 1.8em;
+  line-height: normal;
+}
+
+/* line 54, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.internal-link.white, .external-link.white {
+  color: white;
+  border-bottom-color: white;
+}
+
+/* line 58, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+a.external-link {
+  font-size: inherit;
+  color: #00426A;
+  text-decoration: none;
+  border-bottom: 2px solid #00426A;
+  -webkit-transition: padding-bottom 0.2s ease-in-out;
+  -moz-transition: padding-bottom 0.2s ease-in-out;
+  transition: padding-bottom 0.2s ease-in-out;
+}
+
+/* line 65, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+a.external-link:hover {
+  padding-bottom: 2px;
+}
+
+/* line 68, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+a.internal-link {
+  font-size: inherit;
+  color: #00426A;
+  text-decoration: none;
+  cursor: pointer;
+  cursor: help;
+  border-bottom: 2px dotted #00426A;
+  -webkit-transition: padding-bottom 0.2s ease-in-out;
+  -moz-transition: padding-bottom 0.2s ease-in-out;
+  transition: padding-bottom 0.2s ease-in-out;
+}
+
+/* line 77, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+a.internal-link:hover {
+  padding-bottom: 2px;
+}
+
+/* line 83, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+h3 u {
+  border-radius: 3px;
+  padding: 2px 4px;
+  background-color: lightgrey;
+  color: #00426A;
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 1em;
+}
+
+/* line 92, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 95, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+body {
+  font-size: 1.6em;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 100, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+code {
+  font-family: monospace;
+  font-size: 1.7rem;
+  background-color: lightgrey;
+  border-radius: 3px;
+  padding: 4px 6px;
+  display: inline-block;
+  margin: 10px 0;
+  color: black;
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+}
+
+/* line 114, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+blockquote {
+  background-color: beige;
+  border-radius: 3px;
+  padding: 20px;
+  color: black;
+  text-align: left;
+}
+/* line 121, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+blockquote .word-container {
+  min-height: 40px;
+}
+/* line 123, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+blockquote .word-container .word {
+  font-family: 'Merriweather';
+  font-size: 1.8rem;
+  display: inline-block;
+}
+/* line 128, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+blockquote .word-container .word-info {
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 16px;
+  display: inline-block;
+}
+/* line 135, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+blockquote .explanation {
+  font-size: 0.9em;
+}
+
+/* line 142, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 146, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.center {
+  text-align: center;
+  width: 100%;
+}
+
+/* line 150, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section-logo {
+  height: 80px;
+  width: 80px;
+}
+/* line 154, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section-logo.white * {
+  fill: white;
+}
+
+/* line 158, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+i.section-logo.material-icons {
+  font-size: 80px;
+  margin: 10px 0 20px 0;
+}
+/* line 162, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+i.section-logo.material-icons.white {
+  color: white;
+}
+
+/* line 168, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.paragraph, .image-paragraph {
+  text-align: justify;
+  margin: 20px 30px;
+}
+
+/* line 172, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.image-paragraph {
+  width: auto;
+}
+/* line 175, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.image-paragraph .image-paragraph_content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+}
+@media (max-width: 600px) {
+  /* line 181, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+  .image-paragraph .image-paragraph_content {
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+  }
+  /* line 184, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+  .image-paragraph .right {
+    width: 100%;
+    text-align: center;
+  }
+  /* line 188, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+  .image-paragraph .left {
+    padding-right: 0px;
+  }
+}
+@media (min-width: 600px) {
+  /* line 193, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+  .image-paragraph .image-paragraph_content {
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-direction: row;
+  }
+  /* line 196, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+  .image-paragraph .left {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding-right: 50px;
+  }
+  /* line 200, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+  .image-paragraph .right {
+    width: 250px;
+  }
+}
+
+/* line 207, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section {
+  height: auto;
+  min-height: 100px;
+  width: auto;
+  text-align: center;
+  position: relative;
+  overflow: auto;
+}
+/* line 215, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section .section_background-container {
+  margin: -5px -10px -10px -5px;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: -2;
+  overflow: hidden;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(1px);
+  -moz-transform: translateZ(1px);
+  -ms-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  transform: translateZ(1px);
+}
+/* line 229, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section .section_background-container .section_background {
+  background-position: center;
+  background-size: cover;
+  opacity: 0.9;
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+}
+
+/* line 243, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section_content {
+  max-width: 900px;
+  min-width: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* line 250, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--first {
+  height: 100vh;
+  background-color: transparent;
+  min-height: 350px;
+  overflow: hidden;
+}
+/* line 256, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--first .back-button {
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: white;
+  transform-origin: -8px -8px;
+  -webkit-filter: drop-shadow(0px 0px 10px #4d4d4d);
+  filter: drop-shadow(0px 0px 10px #4d4d4d);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+/* line 266, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--first .back-button .icon, .section--first .back-button .text {
+  float: left;
+}
+/* line 269, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--first .back-button .text {
+  line-height: 2rem;
+  font-size: 1.6rem;
+}
+/* line 274, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--first .back-button .icon i.material-icons {
+  line-height: 23px;
+}
+/* line 279, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--first .section_background {
+  background-color: white;
+  background-image: url("../static_assets/hof_van_liere.jpg");
+}
+/* line 283, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--first .logo-container {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  height: 100px;
+  margin-top: -4.5rem;
+  text-shadow: 0px 0px 10px #4d4d4d;
+}
+/* line 291, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--first .logo-container h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+}
+/* line 297, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--first .logo-container img {
+  -webkit-filter: drop-shadow(0px 0px 10px #4d4d4d);
+  filter: drop-shadow(0px 0px 10px #4d4d4d);
+  width: 35rem;
+  max-width: 85%;
+  min-width: 20%;
+}
+
+/* line 305, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--education {
+  background-color: #00426A;
+  padding: 73px 0 107px 0;
+  height: auto;
+}
+/* line 310, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--education h3 {
+  font-size: 1em;
+  color: white;
+}
+/* line 314, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--education select {
+  max-width: 80%;
+}
+
+/* line 318, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--intro {
+  padding: 30px 0;
+  background-color: white;
+}
+/* line 322, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--intro .student-card-photo {
+  display: inline-block;
+  height: 250px;
+  width: auto;
+}
+
+/* line 328, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--location, .section--wifi {
+  padding: 30px 0;
+  background-color: #930031;
+  color: white;
+}
+
+/* line 336, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.left-arrow, .right-arrow {
+  background-color: lightgrey;
+  height: 40px;
+  width: 40px;
+  font-size: 60px;
+  color: white;
+  line-height: 20px;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 350, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.left-arrow {
+  left: 0;
+}
+
+/* line 353, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.right-arrow {
+  right: 0;
+}
+
+/* line 357, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--terminology {
+  margin: 30px 0;
+  height: 300px;
+}
+
+/* line 361, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--calendar {
+  padding: 30px 0;
+  background-color: #2196F3;
+  color: white;
+}
+
+/* line 366, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--sisa {
+  padding: 30px 0;
+  background-color: #D2DDE9;
+}
+/* line 370, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--sisa .right {
+  min-width: 300px;
+}
+
+/* line 375, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--mail {
+  padding: 30px 0;
+  background-color: white;
+}
+
+/* line 379, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--library {
+  padding: 30px 0;
+  background-color: #eeeeee;
+}
+
+/* line 384, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.sisa-login-screen-photo {
+  max-width: 400px;
+}
+
+/* line 388, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.lesson-block, .google-calendar-photo, .sisa-rooster-photo, .sisa-winkelwagen-photo, .sisa-timetable-photo, .sisa-subplan {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px 0;
+  min-width: 300px;
+}
+
+/* line 396, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.expand-icon {
+  background-color: white;
+  height: 27px;
+  font-size: 24px;
+  border-radius: 15px;
+  border: 2px solid #930031;
+  color: #930031;
+  opacity: 0;
+  min-width: 112px;
+  bottom: 10px;
+  position: absolute;
+  cursor: pointer;
+  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out, -moz-transform 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transform: translateX(-50%);
+  margin-left: 50%;
+  pointer-events: none;
+}
+/* line 415, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.expand-icon div {
+  display: block;
+  margin-top: 4px;
+  padding-left: 10px;
+  float: left;
+}
+
+/* line 423, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--holidays {
+  padding: 30px 0;
+  background-color: #00426A;
+  color: white;
+}
+
+/* line 428, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.holidays-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  padding: 0 50px;
+  width: 100%;
+}
+
+/* line 434, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.holiday {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* line 439, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.holiday-icon {
+  border-radius: 50%;
+  border: 2px solid white;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  text-align: left;
+}
+/* line 447, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.holiday-icon img {
+  margin: 24px;
+  width: 50px;
+  height: 50px;
+}
+
+/* line 453, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.holiday-dates {
+  margin-top: 30px;
+}
+
+@media (max-width: 700px) {
+  /* line 458, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+  .holidays-list {
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+  }
+}
+/* line 463, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--restaurant {
+  padding: 30px 0;
+  background-color: white;
+}
+
+@media (max-width: 600px) {
+  /* line 469, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+  .komida-logo {
+    max-width: 250px;
+    margin: 30px 0;
+    width: 100%;
+  }
+}
+/* line 476, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--blackboard {
+  padding: 50px 0 30px 0;
+  background-color: #FAA61A;
+  color: white;
+}
+
+/* line 482, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--footer {
+  min-height: 0px;
+  margin-top: 50px;
+  overflow: hidden;
+}
+/* line 488, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--footer .footer-image-container {
+  margin: 0 -1px;
+}
+/* line 491, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--footer img {
+  width: 100%;
+  height: auto;
+  margin-bottom: -5px;
+}
+
+/* line 498, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.section--cursuses {
+  padding: 30px 0;
+  background-color: white;
+}
+
+/* line 503, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.cursuses-properties {
+  margin: 10px 0;
+}
+
+/* line 506, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.cursuses-property {
+  text-align: left;
+}
+/* line 509, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.cursuses-property .cursuses-property_icon {
+  display: inline-block;
+  float: left;
+  margin-right: 5px;
+}
+/* line 514, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
+.cursuses-property .cursuses-property_text {
+  display: inline-block;
+  width: auto;
+  margin: 5px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 2, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.section--campuses {
+  background-color: white;
+  height: 500px;
+  position: relative;
+}
+
+/* line 7, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campuses-content-container {
+  height: inherit;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* line 12, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campuses-content {
+  -webkit-transition: margin-left 0.5s ease-in-out;
+  -moz-transition: margin-left 0.5s ease-in-out;
+  transition: margin-left 0.5s ease-in-out;
+  height: inherit;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 17, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campus-content {
+  white-space: normal;
+  position: relative;
+  height: inherit;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 23, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campus-info {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  height: auto;
+}
+/* line 28, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campus-info p {
+  text-align: justify;
+}
+
+/* line 32, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campus-text {
+  overflow-y: hidden;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+/* line 36, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campus-photos {
+  height: 100%;
+  text-align: center;
+  overflow: auto;
+  background-color: #00426A;
+  position: relative;
+  padding: 0 50px;
+  max-height: 900px;
+}
+/* line 45, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campus-photos .campus-photo {
+  position: relative;
+}
+/* line 49, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campus-photos img {
+  width: 400px;
+  margin: 20px 0;
+}
+
+/* line 54, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campus-link-icons {
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+/* line 60, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campus-link-icons .campus-link-icon {
+  display: inline-block;
+}
+/* line 63, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campus-link-icons .campus-link-icon i.material-icons {
+  color: black;
+  font-size: 30px;
+}
+
+/* line 69, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campus-text.overflowed .expand-icon {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* line 73, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.expanded .campus-text.overflowed .expand-icon {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* line 78, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campus-photos .expand-icon {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (min-width: 1200px) {
+  /* line 84, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-content {
+    min-width: 1100px;
+    max-width: 1100px;
+  }
+
+  /* line 88, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campuses-content-container {
+    width: 1100px;
+  }
+}
+@media (min-width: 840px) and (max-width: 1200px) {
+  /* line 93, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-content {
+    min-width: 750px;
+    max-width: 750px;
+  }
+
+  /* line 97, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campuses-content-container {
+    width: 750px;
+  }
+}
+@media (min-width: 701px) and (max-width: 840px) {
+  /* line 102, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-content {
+    min-width: 600px;
+    max-width: 600px;
+  }
+
+  /* line 106, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campuses-content-container {
+    width: 600px;
+  }
+}
+/* line 110, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.campus-text, .campus-photos {
+  position: relative;
+}
+
+/* line 113, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.section--campuses.expanded {
+  height: auto;
+}
+
+@media (min-width: 701px) {
+  /* line 117, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-info {
+    padding-right: 30px;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+
+  /* line 121, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campuses-content {
+    overflow: hidden;
+  }
+
+  /* line 124, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-photos {
+    height: auto;
+    margin-right: 2px;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+
+  /* line 129, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .expanded .campus-photos {
+    height: auto;
+  }
+
+  /* line 132, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-navigate-arrows {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  /* line 138, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .section--campuses .left-arrow, .section--campuses .right-arrow {
+    display: none;
+  }
+
+  /* line 142, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-navigate-arrows {
+    position: relative;
+    min-height: 40px;
+    display: block;
+  }
+  /* line 147, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-navigate-arrows .left-arrow, .campus-navigate-arrows .right-arrow {
+    width: 50%;
+    display: block;
+  }
+
+  /* line 152, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .section--campuses {
+    height: auto;
+    min-height: 500px;
+  }
+
+  /* line 156, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campuses-content {
+    width: 100%;
+  }
+
+  /* line 159, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-content {
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    min-width: 100%;
+    padding: 0px;
+  }
+
+  /* line 168, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-info {
+    min-height: 378px;
+    height: 378px;
+    padding: 15px 30px;
+  }
+
+  /* line 173, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .expanded .campus-info {
+    -webkit-box-flex: auto;
+    -moz-box-flex: auto;
+    box-flex: auto;
+    -webkit-flex: auto;
+    -moz-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
+  }
+
+  /* line 176, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .photos-expanded .campus-photos {
+    -webkit-box-flex: auto;
+    -moz-box-flex: auto;
+    box-flex: auto;
+    -webkit-flex: auto;
+    -moz-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
+    overflow: auto;
+  }
+
+  /* line 180, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-photos {
+    padding: 0;
+    height: 400px;
+    min-height: 400px;
+    max-height: 900px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+  }
+  /* line 190, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-photos .expand-icon.inverse i.material-icons {
+    transform: rotate(180deg);
+    transform-origin: center 48%;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    -moz-transition: -moz-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* line 196, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-photos.overflowed .expand-icon {
+    opacity: 1;
+    pointer-events: all;
+    margin-bottom: 10px;
+  }
+
+  /* line 201, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-photo {
+    position: relative;
+  }
+  /* line 204, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-photo img {
+    margin: 20px auto;
+    width: 80%;
+  }
+
+  /* line 209, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .section--education {
+    padding: 43px 0 77px 0;
+  }
+
+  /* line 212, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campuses-content-container {
+    width: 100%;
+  }
+
+  /* line 219, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .photos-expanded .campus-photos {
+    height: auto;
+  }
+
+  /* line 222, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+  .campus-link-icons {
+    margin: 15px 0;
+  }
+}
+/* line 234, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_campuses.css.scss */
+.expanded .section--campuses, .expanded .campuses-content-container, .expanded .campus-info {
+  height: auto;
+}
+
+/* line 2, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.section--studentclubs {
+  padding: 30px 0;
+  background-color: #eeeeee;
+}
+
+/* line 6, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.section--studentclubs-list {
+  background-color: white;
+}
+
+/* line 9, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.clubs-content-container {
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* line 16, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.clubs-content {
+  -webkit-transition: margin-left 0.5s ease-in-out;
+  -moz-transition: margin-left 0.5s ease-in-out;
+  transition: margin-left 0.5s ease-in-out;
+  height: inherit;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 21, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.club-content {
+  white-space: normal;
+  position: relative;
+  height: inherit;
+}
+
+/* line 26, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.club-info {
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+}
+/* line 31, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.club-info p {
+  text-align: justify;
+}
+
+/* line 35, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.club-name h3 {
+  font-weight: bold;
+  font-family: 'Merriweather', serif;
+  font-size: 2.3em;
+}
+
+/* line 41, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.club-text {
+  position: relative;
+  overflow-y: hidden;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+/* line 48, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.expanded .club-text {
+  overflow-y: auto;
+}
+
+/* line 52, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.club-photo {
+  height: 100%;
+  text-align: center;
+  overflow: auto;
+  position: relative;
+}
+
+/* line 58, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.club-photo img {
+  width: auto;
+}
+
+/* line 61, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.club-properties {
+  width: auto;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  position: relative;
+}
+
+/* line 70, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.club-facebook-link img {
+  margin: 1px;
+  height: 21px;
+  width: 21px;
+}
+
+/* line 76, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.club-property {
+  text-align: left;
+  margin: 5px 0;
+  display: block;
+}
+/* line 82, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.club-property .club-property_icon {
+  display: inline-block;
+  float: left;
+  margin-right: 5px;
+}
+/* line 87, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.club-property .club-property_text {
+  display: inline-block;
+  width: 80%;
+  width: calc(100% - 32px);
+  margin: 5px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 96, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.club-text.overflowed .expand-icon {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* line 100, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.expanded .club-text.overflowed .expand-icon {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* line 104, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.clubs-content-container.expanded {
+  height: auto;
+}
+/* line 107, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+.clubs-content-container.expanded .club-content.current .club-info {
+  max-height: 10000px;
+  height: auto;
+}
+
+@media (min-width: 840px) {
+  /* line 113, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .club-content {
+    min-width: 750px;
+    max-width: 750px;
+  }
+
+  /* line 117, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .clubs-content-container {
+    width: 750px;
+  }
+}
+@media (min-width: 701px) and (max-width: 840px) {
+  /* line 122, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .club-content {
+    min-width: 600px;
+    max-width: 600px;
+  }
+
+  /* line 126, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .clubs-content-container {
+    width: 600px;
+  }
+}
+@media (min-width: 701px) {
+  /* line 131, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .club-content {
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -moz-box-direction: reverse;
+    box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    -moz-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  /* line 135, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .club-photo, .club-info {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    max-height: 400px;
+  }
+
+  /* line 139, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .club-photo img {
+    height: 330px;
+    padding: 55px 0 20px 20px;
+  }
+}
+@media (max-width: 700px) {
+  /* line 145, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .club-photo {
+    padding-top: 30px;
+    min-height: 220px;
+    max-height: 220px;
+  }
+
+  /* line 150, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .club-photo img {
+    height: 180px;
+  }
+
+  /* line 153, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .left-arrow, .right-arrow {
+    top: 50%;
+  }
+
+  /* line 156, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .section--clubs {
+    height: 800px;
+  }
+
+  /* line 159, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .clubs-content {
+    width: 100%;
+  }
+
+  /* line 162, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .club-content {
+    overflow: hidden;
+    display: block;
+    min-width: 100%;
+    padding: 0 50px;
+  }
+
+  /* line 169, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .club-info {
+    padding: 0 30px;
+    height: 400px;
+  }
+
+  /* line 174, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .clubs-content-container {
+    width: 100%;
+    height: auto;
+  }
+
+  /* line 178, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .club-text {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+@media (max-width: 400px) {
+  /* line 183, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/_clubs.scss */
+  .club-info {
+    padding: 0 10px;
+  }
+}
