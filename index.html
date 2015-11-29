@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html ng-app='Studentengids'>
+  <head>
+    <title>Studentengids - Universiteit Antwerpen</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-touch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <link rel="stylesheet" media="all" href="assets/index.css?body=1" />
+    <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+    <script src="assets/studentengids.js?body=1"></script>
+    <script src="assets/index.js?body=1"></script>
+    <meta content='width=device-width, initial-scale=1, minimum-scale=1' name='viewport'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body ng-controller='StudentengidsController'>
+    <div class='section section--first' ng-style='Layout.getViewportHeightStyle()' scroll-background=''>
+      <a href='https://uantwerpen.be'>
+        <div class='back-button'>
+          <div class='icon'>
+            <i class='material-icons'>keyboard_arrow_left</i>
+          </div>
+          <div class='text'>
+            Terug naar UAntwerpen
+          </div>
+        </div>
+      </a>
+      <div class='section_background-container'>
+        <div class='section_background'></div>
+      </div>
+      <div class='logo-container'>
+        <img src='assets/ua_logo_white.svg'>
+        <h2>Een gids voor de beginnende student</h2>
+      </div>
+    </div>
+    <div class='section section--education'>
+      <i class='section-logo material-icons white'>account_balance</i>
+      <h3>Kies eerst je faculteit:</h3>
+      <select ng-change='Education.changedFaculty()' ng-model='Education.selected_faculty' ng-options='f as f.name for f in Education.faculties'></select>
+    </div>
+    <div class='section section--intro'>
+      <div class='section_content'>
+        <div class='paragraph'>
+          <p>
+            Welkom op de Universiteit Antwerpen! Als je zoals vele anderen op zoek bent naar info over wat je moet doen na de inschrijving, ben je hier aan het goede adres.
+            Je hebt blijkbaar gekozen voor een richting van de Faculteit Toegepaste Ingenieurswetenschappen (FTI). We zullen hieronder alles overlopen wat je nodig hebt om
+            goed van start te gaan.
+          </p>
+        </div>
+        <i class='section-logo material-icons'>face</i>
+        <div class='image-paragraph' id='rolnummer'>
+          <div class='image-paragraph_content'>
+            <div class='left'>
+              <p>
+                Als je inschrijving goed is verlopen zal je een studentenkaart ontvangen. Hierop staan je gegevens, waaronder je <b>rolnummer</b>.
+                Voor nieuwe studenten wordt dit nummer ook gebruikt om in te loggen op elke website van de UAntwerpen. We vervangen dan wel de eerste 2 door een s. Dit
+                wordt ook wel het <b>s-nummer</b> genoemd. Op testen en examens schrijf je dan weer je gewone rolnummer.
+              </p>
+              <div class='center'>
+                <code>20151507 &#x2192; s0151507</code>
+              </div>
+            </div>
+            <div class='right'>
+              <img class='student-card-photo' ng-src='assets/studentenkaart.jpg'>
+            </div>
+          </div>
+        </div>
+        <div class='paragraph'>
+          <p>
+            Als het de eerste keer is dat je je inschrijft voor het hoger onderwijs, word je ook wel een generatiestudent genoemd.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class='section section--location'>
+      <div class='section_content'>
+        <i class='section-logo material-icons'>explore</i>
+        <div class='paragraph'>
+          <p>
+            De UAntwerpen heeft verschillende campussen. De hoofdcampus van het FTI is de Campus Paardenmarkt. Daarnaast zitten jullie ook nog op de Stadscampus, en soms ook
+            op Campus Middelheim of Campus Hoboken.
+            Het benoemen van lokalen gaat als volgt:
+          </p>
+          <div class='center'>
+            <code>&ltafkorting naam campus&gt.&ltletter van het gebouw&gt.&ltnummer lokaal&gt</code>
+          </div>
+          <p>
+            Dit wordt dan bijvoorbeeld ST.R.014 voor een lokaal van de Stadscampus in gebouw R. Het eerste cijfer duidt aan op welke verdieping het lokaal zich bevindt.
+            Dit lokaal is dus op het gelijkvloers.
+          </p>
+        </div>
+        <blockquote>
+          <div class='word-container'>
+            <div class='word'>cam·pus</div>
+            <!-- .word-info (de; m; meervoud: campussen) -->
+          </div>
+          <div class='explanation'>
+            Een groep gebouwen waar studenten les hebben, en andere faciliteiten van de universiteit, zoals bibliotheken en refters.
+          </div>
+        </blockquote>
+      </div>
+    </div>
+    <div class='section section--campuses' ng-class='{expanded: Campuses.isExpanded(), "photos-expanded": Campuses.isPhotosExpanded()}' ng-swipe-left='Campuses.clickedNext()' ng-swipe-right='Campuses.clickedPrevious()'>
+      <div class='left-arrow' ng-click='Campuses.clickedPrevious()'>
+        <i class='material-icons'>keyboard_arrow_left</i>
+      </div>
+      <div class='right-arrow' ng-click='Campuses.clickedNext()'>
+        <i class='material-icons'>keyboard_arrow_right</i>
+      </div>
+      <div class='campuses-content-container'>
+        <div class='campuses-content' ng-style='Campuses.getContentStyle()'>
+          <div class='campus-content' ng-class='{current: Campuses.getCurrent() == campus}' ng-repeat='campus in Campuses.campuses'>
+            <div class='campus-info'>
+              <div class='campus-name'>
+                <h3 ng-bind-html='campus.name | sanitize'></h3>
+              </div>
+              <div check-overflow-object='campus' check-overflow-type='campus_text' check-overflow='' class='campus-text' ng-click='Campuses.toggleExpanded(campus)' ng-style='Campuses.getTextStyle(campus)'>
+                <!-- , 'check-overflow' => '0', 'check-overflow-object' => 'campus', 'check-overflow-type' => 'campus_text' -->
+                <p class='child-element' ng-bind='campus.text'></p>
+                <div class='expand-icon'>
+                  <div>Lees meer</div>
+                  <i class='material-icons'>keyboard_arrow_down</i>
+                </div>
+              </div>
+              <div class='campus-link-icons'>
+                <div class='campus-link-icon'>
+                  <a alt='Open in Google Maps' href='{{campus.map_link}}' target='_blank'>
+                    <i class='material-icons'>map</i>
+                  </a>
+                </div>
+                <div class='campus-link-icon'>
+                  <a alt='Meer info over deze campus' href='{{campus.external_link}}' target='_blank'>
+                    <i class='material-icons'>open_in_new</i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class='campus-navigate-arrows'>
+              <div class='left-arrow' ng-click='Campuses.clickedPrevious()'>
+                <i class='material-icons'>keyboard_arrow_left</i>
+              </div>
+              <div class='right-arrow' ng-click='Campuses.clickedNext()'>
+                <i class='material-icons'>keyboard_arrow_right</i>
+              </div>
+            </div>
+            <div check-overflow-object='campus._photos_overflow' check-overflow-type='campus_photos' check-overflow='' class='campus-photos'>
+              <div class='campus-photos-middle-layer child-element'>
+                <div class='campus-photo' ng-repeat='photo in campus.photos'>
+                  <a href='{{photo.link}}' ng-if='photo.link' target='_blank'>
+                    <img ng-src='{{photo.source}}'>
+                  </a>
+                  <img ng-if='!photo.link' ng-src='{{photo.source}}'>
+                </div>
+                <div class='expand-icon' ng-class='{inverse: Campuses.isPhotosExpanded()}' ng-click='Campuses.togglePhotosExpanded(campus)'>
+                  <div ng-show='!Campuses.isPhotosExpanded()'>Meer foto's</div>
+                  <div ng-show='Campuses.isPhotosExpanded()'>Minder foto's</div>
+                  <i class='material-icons'>keyboard_arrow_down</i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='section section--location'>
+      <div class='section_content'>
+        <div class='paragraph'>
+          <p>
+            Als je nog vragen hebt, vind je <a alt="Campusleven" target="_blank" href="https://www.uantwerpen.be/nl/campusleven/" class="external-link white">hier</a> meer info over het campusleven.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class='section section--sisa'>
+      <div class='section_content'>
+        <i class='section-logo material-icons'>turned_in_not</i>
+        <div class='paragraph'>
+          <p>
+            Op de UAntwerpen is het de bedoeling dat je je zelf voor lessen en examens inschrijft. Dit doe je via SisA, een website van de universiteit.
+            Op de Faculteit Toegepaste Ingenieurswetenschappen is het de bedoeling dat je je houdt aan een rooster. Je kan deze roosters <a alt="Collegeroosters" target='_blank' href="https://www.uantwerpen.be/nl/faculteiten/fac-toegepaste-ingenieurswetenschap/onderwijs/collegeroosters-2015" class="external-link">hier</a> terugvinden.
+            <br/>
+            Het inschrijven kan nogal verwarrend zijn. Je schrijft je namelijk niet gewoon in voor een vak, maar je schrijft je apart in voor hoorcolleges, seminaries of werkcolleges en practica.
+            Zo heeft het vak 1-Informatica bijvoorbeeld 1 hoorcollege en 2 hoorcolleges per week, en het is de bedoeling dat iedereen naar het hoorcollege gaat maar men voor de practica
+            wordt opgesplitst. Dit werkt dan met groepen: Er is een hoorcollegegroep, HC01, en er zijn twee practicumgroepen, PR01 en PR02.
+            <br/>
+            De roosters zijn opgesteld om overlappingen te voorkomen, en er voor te zorgen dat iedereen een plaats heeft in elke les. Het is daarom <b>verplicht</b> om je
+            te houden aan dit rooster. Volg de link, open de pdf en kies er een uit.
+          </p>
+          <div class='center'>
+            <code>FTI/&lt;richting&gt;-&lt;jaar&gt;.&lt;nummer van het rooster&gt;</code>
+          </div>
+          <p>
+            De studenten van de eerste bachelor Elektronica-ICT kunnen dan bijvoorbeeld tussen roosters kiezen van FTI/EI-1.01 tot FTI/EI-1.04.
+            Soms ontbreken er ook nummers, let hier niet op.
+            Kies een rooster dat je het beste uitkomt. Je ziet dan deze blokjes:
+          </p>
+          <div class='center'>
+            <img class='lesson-block' src='assets/les_blok.png'>
+          </div>
+          <p id='groepen'>
+            Als dit nog niet duidelijk is, vind je <a alt="Collegerooster leesinstructies" target='_blank' href='https://www.uantwerpen.be/images/uantwerpen/container1245/files/Studieprogramma/2015%2008%2027%20Leesinstructies%20collegeroosters.pdf' class="external-link">hier</a> meer info.
+            <br/>
+            Kijk nu op je rooster van welke vakken je in welke groepen zit. Ga gewoon elk blokje af en schrijf ze allemaal op een papier. Voor het rooster EI-1.01 zijn dat bijvoorbeeld:
+          </p>
+          <ul>
+            <li>1-Wiskunde: HC01, PR05 en SW04</li>
+            <li>1-Gestructureerd Programmeren: PR01, HC01</li>
+            <li>1-Informatica: PR10, HC02</li>
+            <li>1-Chemie: HC01</li>
+            <li>1-Bouwkunde: HC01</li>
+            <li>1-Elektrotechniek: HC01</li>
+          </ul>
+          <p>
+            Daarnaast zie je nog 1-Economie en 12-The Company staan. Dit zijn echter vakken van een minor. Als je nog niet weet wat dat is, dat leggen we <a href="#minor" class="internal-link">straks</a> uit.
+            Als je lijstje af is, ga dan naar <a alt="SisA" target='_blank' href='https://sisastudent.uantwerpen.be' class="external-link">SisA</a>.
+          </p>
+        </div>
+        <div class='image-paragraph'>
+          <div class='image-paragraph_content'>
+            <div class='left'>
+              <p>
+                Klik eerst en vooral op Nederlands. Je kan dan inloggen met je <a class='internal-link' href='#rolnummer'>s-nummer</a> en een wachtwoord.
+                Je s-nummer heb je normaal ontvangen bij inschrijving, je wachtwoord kan je <a alt="Wachtwoord wijzigen" target="_blank" href="https://password.uantwerpen.be" class="external-link">hier</a> verkrijgen of veranderen.
+                <br/>
+                De volledige uitleg over het veranderen van je wachtwoord vind je <a alt="Wachtwoord help" target="_blank" href="https://blackboard.uantwerpen.be/bbcswebdav/pid-195800-dt-content-rid-2352621_1/orgs/UA_SP_PUBLIEK_VRIJ_INFOCENTERICT/UwWachtwoord_juni2015.pdf" class="external-link">hier</a>.
+                Voor problemen met je account kan je op <a alt="Account help" target="_blank" href="https://blackboard.uantwerpen.be/webapps/blackboard/content/listContent.jsp?course_id=_4177_1&content_id=_195719_1&mode=reset" class="external-link">Blackboard</a> terecht. Daarover <a href="#blackboard" class="internal-link">straks</a> meer.
+              </p>
+            </div>
+            <div class='right'>
+              <img class='sisa-login-screen-photo' ng-src='assets/sisa_inlogscherm.png'>
+            </div>
+          </div>
+        </div>
+        <blockquote id='minor'>
+          <div class='word-container'>
+            <div class='word'>mi·nor</div>
+            <!-- .word-info (de; m; meervoud: minors) -->
+          </div>
+          <div class='explanation'>
+            Een minor of subplan is een groep vakken die je kan kiezen. De FTI heeft 5 minors, waaronder The Company, Bedrijfskunde en Productontwikkeling, ...
+          </div>
+        </blockquote>
+        <div class='paragraph'>
+          <p>
+            Elke student moet een minor kiezen. Dit doe je in SisA. Onder het tabblad 'Studieprogramma' vind je het tabblad 'Aanvragen'. Voeg daar een subplan toe.
+            Voor The Company zijn er 100 plaatsen en voor Bedrijfskunde en Productontwikkeling 50. Zorg dus dat je er op tijd bij bent.
+          </p>
+        </div>
+        <img class='sisa-subplan' ng-src='assets/sisa_subplan.jpg'>
+        <div class='paragraph'>
+          <p>
+            Vul hier alles in, en klik enkele keren op 'Volgende' en 'Inschrijven'. Dit wijst zichzelf uit.
+          </p>
+        </div>
+        <div class='paragraph'>
+          <p>
+            In SisA moet je lessen toevoegen aan je winkelwagen, en er daarna voor inschrijven. We gaan er van uit dat je op het modeltraject zit. Dit is altijd zo
+            voor een beginnende student.
+          </p>
+        </div>
+        <blockquote>
+          <div class='word-container'>
+            <div class='word'>mo·del·tra·ject</div>
+            <!-- .word-info (het; v; meervoud: modeltrajecten) -->
+          </div>
+          <div class='explanation'>
+            Een modeltraject is het traject dat een perfecte student volgt. Een student zit op het modeltraject als hij zich inschrijft voor 60 studiepunten per jaar,
+            als hij geen vakken moet meenemen en hij dus enkel vakken uit het jaar waarin hij zit volgt. Als de student er niet door is voor een vak, wijkt hij
+            af van het modeltraject.
+          </div>
+        </blockquote>
+        <div class='paragraph'>
+          <p>
+            Volg deze stappen:
+          </p>
+        </div>
+        <div class='center'>
+          <img class='sisa-winkelwagen-photo' src='assets/sisa_winkelwagen.png'>
+        </div>
+        <div class='paragraph'>
+          <p>
+            Je ziet dan een lijst van je vakken. Je zal je voor elk vak apart moeten inschrijven. Klik bijvoorbeeld op 1-Wiskunde:
+          </p>
+        </div>
+        <div class='center'>
+          <img class='sisa-rooster-photo' src='assets/sisa_timetable.png'>
+        </div>
+        <div class='paragraph'>
+          <p>
+            In de kolom 'sectie' zie je alle mogelijke groepen staan. Selecteer diegenen die je <a class='internal-link' href='#groepen'>hierboven</a> hebt opgeschreven. Dit mag dus <b>niet willekeurig</b>.
+            Soms is er maar 1 groep en zit je daar automatisch in, zoals HC01 in het voorbeeld.
+            Klik daarna op twee keer op 'Volgende' (soms afgekort als 'Vlg'), en begin dan aan het volgende vak. Schrijf je ook in voor de vakken van je minor, maar natuurlijk niet van andere minors.
+            <br/>
+            Als je een rood ruitje ziet staan naast een groep waarin je je wilt inschrijven, betekent dit dat je een overlapping hebt. Als je je aan het rooster hebt gehouden, zou dit niet mogen
+            voorkomen. Als het een blauw vierkantje is, is de groep volzet. Je moet dan een ander rooster kiezen. Lees hieronder verder hoe dat moet.
+            <br/>
+            Als je klaar bent, klik dan op de knop 'Inschrijven' onder het winkelwagentje. Als alles goed gaat zouden er enkel groene vinkjes mogen staan naast de inschrijvingen. Als dit niet zo is,
+            zitten bepaalde groepen al vol. Je moet dan een ander rooster kiezen. Schrijf je uit voor de groepen die anders zijn dan het eerste rooster en schrijf je weer in voor de groepen van het nieuwe rooster.
+            Uitschrijven kan via het tabblad 'Uitschrijven'.
+            <br/>
+            Het is belangrijk dat je dit doet voor de uiterste datum. Voor het eerste semester is dat 15 september 2015, voor het tweede semester 25 september 2015.
+            <br/>
+            Een volledige handleiding van SisA vind je <a alt="SisA handleiding" target="_blank" href="https://www.uantwerpen.be/images/uantwerpen/container1245/files/Studieprogramma/2015%2008%2024%20Handleiding%20SisA%20-%20Quick_Reference_Guide_Selfservice_Student2_0_v3.pdf" class="external-link">hier</a>.
+            Voor andere vragen kan je op de <a alt="SisA handleiding" target="_blank" href="http://uahost.uantwerpen.be/helpdesk/inschrijvingen/" class="external-link">helpdesk</a> terecht.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class='section section--calendar'>
+      <div class='section_content'>
+        <i class='section-logo material-icons'>event</i>
+        <div class='paragraph'>
+          <p>
+            Je vindt onder het tabblad Rooster je lessenrooster terug. Je kan deze importeren in een app als Google Calendar. Klik daarvoor hier:
+          </p>
+        </div>
+        <div class='center'>
+          <img class='sisa-timetable-photo' src='assets/sisa_timetable.png'>
+        </div>
+        <div class='paragraph'>
+          <p>
+            Daar vind je een link terug als dit:<br/><code>webcal://sisaroosters.ua.ac.be/prod/12345/basic.ics</code><br/>
+            Kopieer dit, en log daarna in op <a alt="Google Calendar" target="_blank" href="https://calendar.google.com" class="external-link white">Google Calendar</a>. en volg deze stappen om het te importeren:
+          </p>
+        </div>
+        <div class='center'>
+          <img class='google-calendar-photo' src='assets/google_calendar.png'>
+        </div>
+        <div class='paragraph'>
+          <p>
+            Vul daar de link in, maar vervang <code>webcal://</code> door <code>http://</code>.
+            Het wordt dan zoiets: <br/><code>http://sisaroosters.ua.ac.be/prod/12345/basic.ics</code><br/>
+            Plak de link in het tekstvak en druk op enter. De agenda zou nu geïmporteerd moeten worden (kan even duren).
+            Je kan de Google Calendar app downloaden voor Android en iOS.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class='section section--mail'>
+      <div class='section_content'>
+        <i class='section-logo material-icons'>mail_outline</i>
+        <div class='paragraph'>
+          <p>
+            Je hebt ook een eigen mailadres gekregen. Inloggen op je mail doe je via <a alt="UA mail" target="_blank" href="https://mail.student.uantwerpen.be" class="external-link">mail.student.uantwerpen.be</a>.
+            Ook dit doe je met je s-nummer en je wachtwoord.
+            <br/>
+            Het mailadres van elke student ziet er zo uit:
+            <br/>
+            <code>&lt;voornaam&gt;.&lt;achternaam&gt;@student.uantwerpen.be</code>
+            <br/>
+            Het mailadres van een leerkracht of medewerker is korter:
+            <br/>
+            <code>&lt;voornaam&gt;.&lt;achternaam&gt;@uantwerpen.be</code>
+            <br/>
+            Het is de bedoeling dat al het mailverkeer met leerkrachten en andere universiteitsmedewerkers via dit mailadres verloopt.
+            <br/>
+            Je kan op bijna elke gsm deze mail ontvangen. Er is een Outlook app beschikbaar voor
+            <a class="external-link" target="_blank" href="https://play.google.com/store/apps/details?id=com.microsoft.office.outlook">Android</a>,
+            <a class="external-link" target="_blank" href="https://itunes.apple.com/us/app/microsoft-outlook/id951937596">iOS</a> en
+            Windows Phone, iets dat we aanraden. Selecteer daarop Office 365 en log in
+            met je mailadres (dus niet je s-nummer) en je wachtwoord.
+            <br/>
+            De volledige uitleg van Office 365 vind je <a alt="Office 365 help" target="_blank" href="https://blackboard.uantwerpen.be/bbcswebdav/pid-195209-dt-content-rid-4329468_1/orgs/UA_SP_PUBLIEK_VRIJ_INFOCENTERICT/Office%20365%20-%20Studentenhandleiding%283%29.pdf " class="external-link">hier</a>.
+            Voor specifiekere uitleg moet je op <a alt="Office 365 help" target="_blank" href="https://blackboard.uantwerpen.be/webapps/blackboard/content/listContent.jsp?course_id=_4177_1&content_id=_193752_1&mode=reset" class="external-link">Blackboard</a> zijn. Dat leggen we <a href="#blackboard" class="internal-link">straks</a> verder uit.
+            Als er geen app beschikbaar is, kan je ook op Blackboard terecht.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class='section section--wifi'>
+      <div class='section_content'>
+        <i class='section-logo material-icons'>wifi</i>
+        <div class='paragraph'>
+          <p>
+            Voor WiFi log je gewoon in op het netwerk UAntwerpen met je <a class='internal-link white' href='#rolnummer'>s-nummer</a> en je wachtwoord.
+            Dit netwerk is op alle campussen van de universiteit beschikbaar.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class='section section--studentclubs'>
+      <div class='section_content'>
+        <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="-37 39 24 24" style="enable-background:new -37 39 24 24;" xml:space="preserve" class="section-logo">
+        <path style="fill:none;" d="M-37,39.1h24v24h-24V39.1z"></path>
+        <path d="M-17.5,41.1c-1.3-1.4-3.4-1.1-3.8-1l-0.5,0.1l-0.2,0.1c-0.4-0.2-0.9-0.3-1.6-0.3c-0.4,0-0.8,0-1.1,0.1  c-0.5-0.6-1.3-1.1-2.8-1.1c-1.4,0-2.3,0.6-2.8,1.1c-0.3-0.1-0.7-0.2-1.2-0.2c-2.3,0-3.8,1.6-3.8,3.9c0,2.2,1.8,3.5,3.7,3.6l0.1,0  c1.1,0,1.8-0.2,2.3-0.4c0.4,0.2,0.9,0.4,1.6,0.4c0.4,0,0.8,0,1.1-0.1c0,0.4-0.2,0.9-0.3,1.4c-0.4,1.5-0.8,3.3-0.1,4.8  c0.9,2,2.4,2.3,3.2,2.3c0.1,0,0.1,0,0.2,0c1.4-0.1,2.6-1.1,2.9-2.1c0.5-1.5,0.2-3.1-0.1-4.8c-0.1-0.6-0.2-1.2-0.3-1.7  c0.5,0.1,1.6,0.4,2.6-0.3c0.8-0.5,1.4-1.4,1.7-2.8C-16.4,42.6-17.1,41.6-17.5,41.1z M-18.7,43.9c-0.5,2.3-1.6,1.5-2.3,1.4  c-0.7-0.1-2.3,0.1-2.1,2.1c0.3,2.3,1,4.4,0.5,5.9c-0.1,0.2-1.5,1.8-2.6-0.4c-0.7-1.5,0.6-4,0.6-5.7c0-1.3-0.5-1.5-0.8-1.7  c-1.1-0.6-1.1,0.1-2.2,0.1c-1.1,0-0.9-0.7-2.1-0.8c-1.1,0,0.5,0.8-2,0.8c0,0-1.8-0.1-1.8-1.6s0.9-1.9,1.8-1.9c0.8,0,0.8,0.6,1.6,0.5  c0.8,0,0.7-1.4,2.5-1.4s1.3,1,2.3,1.2c1.1,0.2,0.4-0.2,1.5-0.2c1.1,0,0.8,0.3,1.5,0.4c0.6,0,1.1-0.3,1.1-0.3S-18.2,41.6-18.7,43.9z"></path>
+        <path d="M-20.6,62.8h-10.8c-1.6,0-2.9-1.3-2.9-2.9V46h2v13.9c0,0.5,0.4,0.9,0.9,0.9h10.8c0.5,0,0.9-0.4,0.9-0.9V46h2v13.9  C-17.7,61.5-19,62.8-20.6,62.8z"></path>
+        <path d="M-15.5,57.5h-2.3v-2h1.6V51h-1.6v-2h2.3c0.6,0,1.3,0.5,1.3,1.9v4.9C-14.1,57.1-14.9,57.5-15.5,57.5z"></path>
+        </svg>
+        <div class='paragraph'>
+          <p>
+            De boog moet niet altijd gespannen staan. Daarom kan je je aansluiten bij een studentenvereniging. Van de meeste verenigingen kan je gewoon een lidkaart kopen, maar je kan je daar bovenop
+            ook laten dopen. Studentenclubs zijn doorgaans losse studentenverenigingen. Studentenkringen of faculteitskringen zijn dan weer studentenverenigingen die aan een bepaalde faculteit of aan een bepaald
+            departement gebonden zijn. Deze termen worden meestal gewoon door elkaar gebruikt. Hieronder vind je een lijst van de Antwerpse studentenverenigingen die verbonden zijn met de UAntwerpen
+            of opmerkelijk zijn.
+            Als ze gebonden zijn aan een faculteit of department, staat dat vanonder, samen met andere info.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class='section section--studentclubs-list' ng-swipe-left='Clubs.clickedNext()' ng-swipe-right='Clubs.clickedPrevious()'>
+      <div class='left-arrow' ng-click='Clubs.clickedPrevious()'>
+        <i class='material-icons'>keyboard_arrow_left</i>
+      </div>
+      <div class='right-arrow' ng-click='Clubs.clickedNext()'>
+        <i class='material-icons'>keyboard_arrow_right</i>
+      </div>
+      <div class='clubs-content-container' ng-class='{expanded: Clubs.isExpanded()}'>
+        <div class='clubs-content' ng-style='Clubs.getContentStyle()'>
+          <div class='club-content' ng-class='{current: Clubs.getCurrent() == club}' ng-repeat='club in Clubs.clubs'>
+            <div class='club-photo'>
+              <img ng-src='{{club.image_source}}'>
+            </div>
+            <div check-overflow-object='club._style.info_box' check-overflow-options='only_block' check-overflow-type='clubs_text' check-overflow='' class='club-info' ng-style='Clubs.getInfoStyle(club)'>
+              <div class='club-name'>
+                <h3 ng-bind='club.name'></h3>
+              </div>
+              <div check-overflow-object='club._style.text_box' check-overflow-type='clubs_text' check-overflow='' class='club-text' id='{{club.name}}' ng-click='Clubs.toggleExpanded(club)'>
+                <p class='child-element' ng-bind='club.description+club.description'></p>
+                <div class='expand-icon'>
+                  <div>Lees meer</div>
+                  <i class='material-icons'>keyboard_arrow_down</i>
+                </div>
+              </div>
+              <div class='club-properties'>
+                <div class='club-property' ng-if='club.department'>
+                  <i class='material-icons club-property_icon'>account_balance</i>
+                  <span class='club-property_text'>{{club.department}}</span>
+                </div>
+                <div class='club-property' ng-if='club.notable'>
+                  <i class='material-icons club-property_icon'>group</i>
+                  <span class='club-property_text'>{{club.notable}}</span>
+                </div>
+                <div class='club-property' ng-if='club.stamcafe'>
+                  <i class='material-icons club-property_icon'>location_on</i>
+                  <span class='club-property_text'>{{club.stamcafe.name}}</span>
+                </div>
+                <div class='club-property' ng-if='club.website || club.facebook_link'>
+                  <a class='club-website-link' href='http://{{club.website}}' ng-if='club.website' target='_blank'>
+                    <i class='material-icons club-property_icon'>open_in_new</i>
+                  </a>
+                  <a class='club-facebook-link' href='{{club.facebook_link}}' ng-if='club.facebook_link' target='_blank'>
+                    <img src='assets/facebook_logo.png'>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='section section--studentclubs'>
+      <div class='section_content'>
+        <div class='paragraph'>
+          <p>
+            Een uitgebreidere lijst van alle studentenverenigingen in Antwerpen vind je <a alt="Studentenverenigingen" target="_blank" href="https://www.uantwerpen.be/nl/campusleven/studentenwerking/studentenverenigingen/" class="external-link">hier</a>.
+            Voor alle studentenverenigingen in België moet je <a alt="Studentenverenigingen" target="_blank" href="http://www.studentenclub.be/clubs.aspx" class="external-link">hier</a> zijn, en een wiki met info en geschiedenis vind je
+            <a alt="Studentenverenigingen" target="_blank" href="http://kda.wikia.be" class="external-link">hier</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class='section section--holidays'>
+      <div class='section_content'>
+        <i class='section-logo material-icons'>beach_access</i>
+      </div>
+      <div class='holidays-list'>
+        <div class='holiday'>
+          <div class='holiday-icon'>
+            <img src='assets/holidays/sun.svg'>
+          </div>
+          <div class='holiday-dates'>
+            <b>Lesvrije week</b>
+            <br>
+            19 - 23 september
+          </div>
+        </div>
+        <div class='holiday'>
+          <div class='holiday-icon'>
+            <img src='assets/holidays/snow_flake.svg'>
+          </div>
+          <div class='holiday-dates'>
+            <b>Kerstvakantie</b>
+            <br>
+            21 december - 1 januari
+          </div>
+        </div>
+        <div class='holiday'>
+          <div class='holiday-icon'>
+            <img src='assets/holidays/ski.svg'>
+          </div>
+          <div class='holiday-dates'>
+            <b>Semestervakantie</b>
+            <br>
+            1 - 5 februari
+          </div>
+        </div>
+        <div class='holiday'>
+          <div class='holiday-icon'>
+            <img src='assets/holidays/egg.svg'>
+          </div>
+          <div class='holiday-dates'>
+            <b>Paasvakantie</b>
+            <br>
+            28 maart - 8 april
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='section section--cursuses'>
+      <div class='section_content'>
+        <i class='section-logo material-icons'>book</i>
+        <div class='paragraph'>
+          <p>
+            Naargelang je faculteit zal je ergens je boeken moeten gaan afhalen. Voor de FTI is dat bij de Universitas Cursusdienst, vlakbij de Stadscampus. Je kan je boeken daar bijna elke weekdag gaan afhalen.
+            De wachtrijen kunnen lang zijn, dus als je het kan is het handig om dit voor de aanvang van het schooljaar te doen. Je kan je cursus ter plekke bestellen, maar je mag in de snelle rij gaan staan
+            als je ze online bestelt. Dat kan <a class="external-link" target="_blank" href="http://www.universitas.be/nl/cursusdienst">hier</a>. Je moet ook waarschijnlijk een boek van wiskunde kopen in
+            de Standaard Student Shop.
+          </p>
+          <div class='cursuses-properties'>
+            <a alt='Open in Google Maps' href='https://goo.gl/maps/yzcRZShVWQS2' target='_blank'>
+              <div class='cursuses-property'>
+                <i class='material-icons club-property_icon'>map</i>
+                <span class='cursuses-property_text'>Universitas Cursusdienst</span>
+              </div>
+            </a>
+            <a alt='Open in Google Maps' href='https://goo.gl/maps/JZo9tye6SFT2' target='_blank'>
+              <div class='cursuses-property'>
+                <i class='material-icons club-property_icon'>map</i>
+                <span class='cursuses-property_text'>Standaard Student Shop</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='section section--blackboard' id='blackboard'>
+      <div class='section_content'>
+        <img class='section-logo' src='assets/blackboard_icon.png'>
+        <div class='paragraph'>
+          <p>
+            Voor lesmateriaal kan je terecht op <a class="external-link white" target="_blank" href="https://blackboard.uantwerpen.be">Blackboard</a>.
+            Dit is te vergelijken met SmartSchool of Schoolonline in het middelbaar onderwijs. De website is redelijk vanzelfsprekend. Er is ook een app van Blackboard voor Android en iOS.
+            Daarmee kan je al je mededelingen lezen op je gsm.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class='section section--restaurant'>
+      <div class='section_content'>
+        <i class='section-logo material-icons'>local_dining</i>
+        <div class='image-paragraph'>
+          <div class='image-paragraph_content'>
+            <div class='left'>
+              <p>
+                Op de Stadscampus, Campus Middelheim, Campus Groenenborger, Campus Drie Eiken en Campus Zuid zijn er ook studentenrestaurants aanwezig.
+                Hier kan je elke dag vanalles kopen, zoals broodjes en taart, maar ook gerechten zoals steak met kroketten en pasta's. Er is ook een vegetarisch menu.
+                Dit alles tegen zeer voordelige prijzen.
+                Het menu verandert dag op dag. Voor meer info en voor het weekmenu kan je <a class="external-link" target="_blank" href="https://www.uantwerpen.be/nl/campusleven/eten/">hier</a> terecht.
+              </p>
+            </div>
+            <div class='right'>
+              <img class='komida-logo' src='assets/komida.png'>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='section section--library'>
+      <div class='section_content'>
+        <i class='section-logo material-icons'>import_contacts</i>
+        <div class='paragraph'>
+          <p>
+            Op de Stadscampus, Campus Groenenborger, Campus Drie Eiken, Campus Hoboken en Campus Zuid is er een bibliotheek aanwezig. De bibliotheken worden vaak gebruikt om te studeren.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class='section section--history'>
+      <div class='section_content'>
+        <i class='section-logo material-icons'>timeline</i>
+        <div class='paragraph'>
+          <p>
+            Als laatste willen we je ook nog een korte geschiedenis van de Universiteit Antwerpen bijbrengen. Tot 2003 waren het nog 3 aparte universiteiten, namelijk het UFSIA (nu de Stadscampus),
+            het RUCA (nu Campus Middelheim en Campus Groenenborger) en het UIA (nu Campus Drie Eiken). In 2005 kreeg de UAntwerpen een nieuw logo. Vanaf dan staat de universiteit ook bekend als
+            de Universiteit aan de Stroom. In 2013 werden er enkele campussen overgenomen van de hogescholen: Campus Hoboken, Campus Merksem, Campus Mutsaard, Campus Paardenmarkt en Campus Zuid.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class='section section--footer'>
+      <div class='footer-image-container'>
+        <img class='footer-image' src='assets/footer.svg'>
+      </div>
+    </div>
+  </body>
+</html>

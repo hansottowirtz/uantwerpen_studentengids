@@ -361,7 +361,7 @@ i.section-logo.material-icons.white {
 /* line 279, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
 .section--first .section_background {
   background-color: white;
-  background-image: url("../static_assets/hof_van_liere.jpg");
+  background-image: url("hof_van_liere.jpg");
 }
 /* line 283, /Users/Otto/Programming/Rails/studenten_gids/app/assets/stylesheets/index.css.scss */
 .section--first .logo-container {

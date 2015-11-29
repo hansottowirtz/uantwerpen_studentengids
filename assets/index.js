@@ -241,10 +241,10 @@
             photos: [
               {
                 link: 'https://www.uantwerpen.be/images/uantwerpen/container1161/files/Kaartpdf_stadscampus.pdf',
-                source: '/static_assets/kaart_stadscampus.jpg'
+                source: 'assets/kaart_stadscampus.jpg'
               }, {
                 link: null,
-                source: '/static_assets/hof_van_liere2.jpg'
+                source: 'assets/hof_van_liere2.jpg'
               }
             ],
             _photos_overflow: {}
@@ -256,7 +256,7 @@
             photos: [
               {
                 link: 'https://www.uantwerpen.be/images/uantwerpen/container1161/files/Kaartpdf_drieeiken.pdf',
-                source: '/static_assets/kaart_drie_eiken.jpg'
+                source: 'assets/kaart_drie_eiken.jpg'
               }
             ],
             _photos_overflow: {}
@@ -268,7 +268,7 @@
             photos: [
               {
                 link: 'https://www.uantwerpen.be/images/uantwerpen/container1161/files/CMI_02_CMYK_14.pdf',
-                source: '/static_assets/kaart_middelheim.jpg'
+                source: 'assets/kaart_middelheim.jpg'
               }
             ],
             _photos_overflow: {}
@@ -280,7 +280,7 @@
             photos: [
               {
                 link: 'https://www.uantwerpen.be/images/uantwerpen/container1161/files/Kaartpdf_Groenenborger.pdf',
-                source: '/static_assets/kaart_groenenborger.jpg'
+                source: 'assets/kaart_groenenborger.jpg'
               }
             ],
             _photos_overflow: {}
@@ -292,7 +292,7 @@
             photos: [
               {
                 link: 'https://www.uantwerpen.be/images/uantwerpen/container1161/files/kaartpdf_campusHoboken.pdf',
-                source: '/static_assets/kaart_hoboken.jpg'
+                source: 'assets/kaart_hoboken.jpg'
               }
             ],
             _photos_overflow: {}
@@ -304,7 +304,7 @@
             photos: [
               {
                 link: 'https://www.uantwerpen.be/images/uantwerpen/container1161/files/kaartpdf_campusZuid.pdf',
-                source: '/static_assets/kaart_zuid.jpg'
+                source: 'assets/kaart_zuid.jpg'
               }
             ],
             _photos_overflow: {}
@@ -316,7 +316,7 @@
             photos: [
               {
                 link: 'https://www.uantwerpen.be/images/uantwerpen/container1161/files/Kaartpdf_campusMerksem.pdf',
-                source: '/static_assets/kaart_merksem.jpg'
+                source: 'assets/kaart_merksem.jpg'
               }
             ],
             _photos_overflow: {}
@@ -380,7 +380,7 @@
         clubs: [
           {
             name: 'Aesculapia',
-            image_source: '../static_assets/studentenclubs/aesculapia.png',
+            image_source: 'assets/studentenclubs/aesculapia.png',
             description: '',
             department: 'Geneeskunde',
             stamcafe: {
@@ -391,7 +391,7 @@
             facebook_link: 'https://www.facebook.com/aesculapia'
           }, {
             name: 'Abundantia',
-            image_source: '../static_assets/studentenclubs/abundantia.jpg',
+            image_source: 'assets/studentenclubs/abundantia.jpg',
             description: '',
             stamcafe: {
               name: 'De Salamander (De Sali)',
@@ -402,21 +402,21 @@
             facebook_link: 'https://www.facebook.com/Abundantia-Antwerpen-1508101279508854'
           }, {
             name: 'AIESEC',
-            image_source: '../static_assets/studentenclubs/aiesec.png',
+            image_source: 'assets/studentenclubs/aiesec.png',
             description: '',
             website: 'aiesecua.be',
             notable: 'Leiderschapsontwikkeling (Internationaal)',
             facebook_link: 'https://www.facebook.com/ua.aiesec'
           }, {
             name: 'Biomedica',
-            image_source: '../static_assets/studentenclubs/biomedica.png',
+            image_source: 'assets/studentenclubs/biomedica.png',
             description: '',
             department: 'Biomedische wetenschappen',
             website: 'biomedica.be',
             facebook_link: 'https://www.facebook.com/BiomedicaAntwerpen'
           }, {
             name: 'De Chips',
-            image_source: '../static_assets/studentenclubs/chips.png',
+            image_source: 'assets/studentenclubs/chips.png',
             description: '',
             stamcafe: {
               name: 'De Schacht',
@@ -427,146 +427,146 @@
             facebook_link: 'https://www.facebook.com/DeChipsKotstudenten'
           }, {
             name: 'Conservamus',
-            image_source: '../static_assets/studentenclubs/conservamus.png',
+            image_source: 'assets/studentenclubs/conservamus.png',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
             department: 'Conservatie en restoratie',
             website: 'www.facebook.com/conservamus.antwerpen',
             facebook_link: 'https://www.facebook.com/conservamus.antwerpen'
           }, {
             name: 'Campinaria',
-            image_source: '../static_assets/studentenclubs/campinaria.png',
+            image_source: 'assets/studentenclubs/campinaria.png',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ',
             website: 'campinaria.be',
             notable: 'Kot- en homestudenten',
             facebook_link: 'https://www.facebook.com/Campinaria'
           }, {
             name: 'Demetris',
-            image_source: '../static_assets/studentenclubs/demetris.png',
+            image_source: 'assets/studentenclubs/demetris.png',
             description: '',
             department: 'Bio-ingenieurs',
             website: 'demetris-ua.be'
           }, {
             name: 'Diefka',
-            image_source: '../static_assets/studentenclubs/diefka.png',
+            image_source: 'assets/studentenclubs/diefka.png',
             description: '',
             department: 'Diergeneeskundige wetenschappen',
             website: 'diefka.com',
             facebook_link: 'https://www.facebook.com/DIEFKAntwerpen'
           }, {
             name: 'De Flamingo\'s',
-            image_source: '../static_assets/studentenclubs/de_flamingos.jpg',
+            image_source: 'assets/studentenclubs/de_flamingos.jpg',
             description: '',
             notable: 'Holebi-studenten',
             website: 'studentenclubdeflamingos.be',
             facebook_link: 'https://www.facebook.com/studentenclubdeflamingos'
           }, {
             name: 'EESTEC',
-            image_source: '../static_assets/studentenclubs/eestec.svg',
+            image_source: 'assets/studentenclubs/eestec.svg',
             description: '',
             department: 'Informatica (Europees)',
             website: 'eestec.be',
             facebook_link: 'https://www.facebook.com/EESTEC'
           }, {
             name: 'ELSA',
-            image_source: '../static_assets/studentenclubs/elsa.gif',
+            image_source: 'assets/studentenclubs/elsa.gif',
             description: '',
             department: 'Rechten (Europees)',
             website: 'elsa.org',
             facebook_link: 'https://www.facebook.com/elsa.antwerp'
           }, {
             name: 'EMSA',
-            image_source: '../static_assets/studentenclubs/emsa.jpg',
+            image_source: 'assets/studentenclubs/emsa.jpg',
             description: '',
             department: 'Geneeskunde (Europees)',
             website: 'emsa.be',
             facebook_link: 'https://www.facebook.com/EMSAAntwerpen'
           }, {
             name: 'Fabiant',
-            image_source: '../static_assets/studentenclubs/fabiant.png',
+            image_source: 'assets/studentenclubs/fabiant.png',
             description: '',
             department: 'Biologie',
             website: 'fabiant.be',
             facebook_link: 'https://www.facebook.com/Fabiantisgroot'
           }, {
             name: 'KDA',
-            image_source: '../static_assets/studentenclubs/kda.png',
+            image_source: 'assets/studentenclubs/kda.png',
             description: '',
             department: 'Chemie en biochemie',
             website: 'uakda.be',
             facebook_link: 'https://www.facebook.com/KringDerAlchemisten'
           }, {
             name: 'IMBIT',
-            image_source: '../static_assets/studentenclubs/imbit.jpg',
+            image_source: 'assets/studentenclubs/imbit.jpg',
             description: '',
             department: 'Handelsingenieur in de beleidsinformatica',
             website: 'imbit.org',
             facebook_link: 'https://www.facebook.com/imbit.antwerpen'
           }, {
             name: 'Klio',
-            image_source: '../static_assets/studentenclubs/klio.png',
+            image_source: 'assets/studentenclubs/klio.png',
             description: '',
             department: 'Geschiedenis',
             website: 'klio.be',
             facebook_link: 'https://www.facebook.com/Klio-Departementsclub-Geschiedenis-153130011539957'
           }, {
             name: 'Kinesia',
-            image_source: '../static_assets/studentenclubs/kinesia.png',
+            image_source: 'assets/studentenclubs/kinesia.png',
             description: '',
             department: 'Revalidatiewetenschappen en kinesitherapie',
             website: 'www.studentenclubkinesia.be',
             facebook_link: 'https://www.facebook.com/kinesia.antwerpen'
           }, {
             name: 'Lingua',
-            image_source: '../static_assets/studentenclubs/lingua.jpg',
+            image_source: 'assets/studentenclubs/lingua.jpg',
             description: '',
             department: 'Taal- en letterkunde',
             website: 'www.lingua-ua.be',
             facebook_link: 'https://www.facebook.com/Lingua-189658387790230'
           }, {
             name: 'Modulor',
-            image_source: '../static_assets/studentenclubs/modulor.jpg',
+            image_source: 'assets/studentenclubs/modulor.jpg',
             description: '',
             department: 'Architectuur en interieurarchitectuur',
             website: 'modulor.me',
             facebook_link: 'https://www.facebook.com/modulor.antwerpen'
           }, {
             name: 'Óðinn',
-            image_source: '../static_assets/studentenclubs/odinn.jpg',
+            image_source: 'assets/studentenclubs/odinn.jpg',
             description: '',
             notable: 'Mannenclub',
             website: 'odinn.be',
             facebook_link: 'https://www.facebook.com/odinnUA'
           }, {
             name: 'Hera',
-            image_source: '../static_assets/studentenclubs/hera.png',
+            image_source: 'assets/studentenclubs/hera.png',
             description: '',
             notable: 'Vrouwenclub',
             website: null,
             facebook_link: 'https://www.facebook.com/Hera-374031099344183'
           }, {
             name: 'Prisma',
-            image_source: '../static_assets/studentenclubs/prisma.jpg',
+            image_source: 'assets/studentenclubs/prisma.jpg',
             description: '',
             notable: 'Solidair met studenten',
             website: 'ua-prisma.be',
             facebook_link: 'https://www.facebook.com/ua.prisma'
           }, {
             name: 'PSW',
-            image_source: '../static_assets/studentenclubs/psw.png',
+            image_source: 'assets/studentenclubs/psw.png',
             description: '',
             department: 'Sociale wetenschappen',
             website: 'psw.be',
             facebook_link: 'https://www.facebook.com/pswantwerpen'
           }, {
             name: 'Praesidium Ten Prinsenhove',
-            image_source: '../static_assets/studentenclubs/ptp.jpg',
+            image_source: 'assets/studentenclubs/ptp.jpg',
             description: '',
             notable: 'Studentenhome Ten Prinsenhove',
             website: 'club.studiant.be/ptp/',
             facebook_link: 'https://www.facebook.com/praesidium.tenprinsenhove.7'
           }, {
             name: 'Vulcanis',
-            image_source: '../static_assets/studentenclubs/vulcanis.gif',
+            image_source: 'assets/studentenclubs/vulcanis.gif',
             description: '',
             department: 'Industriële ingenieurs',
             stamcafe: {
@@ -577,56 +577,56 @@
             facebook_link: 'https://www.facebook.com/VulcanisAntwerpen'
           }, {
             name: 'Socio Economica',
-            image_source: '../static_assets/studentenclubs/socio_economica.png',
+            image_source: 'assets/studentenclubs/socio_economica.png',
             description: '',
             department: 'Sociaal-economische wetenschappen',
             website: 'socioeconomica.be',
             facebook_link: 'https://www.facebook.com/SocioEconomica.UA'
           }, {
             name: 'Sofia',
-            image_source: '../static_assets/studentenclubs/sofia.jpg',
+            image_source: 'assets/studentenclubs/sofia.jpg',
             description: '',
             department: 'Rechten',
             website: 'sofia.be',
             facebook_link: 'https://www.facebook.com/Sofia-Antwerp-248736418506140'
           }, {
             name: 'PoStuRa',
-            image_source: '../static_assets/studentenclubs/postura.jpg',
+            image_source: 'assets/studentenclubs/postura.jpg',
             description: '',
             department: 'Productontwikkeling',
             website: 'postura.be',
             facebook_link: 'https://www.facebook.com/studentenraadPO'
           }, {
             name: 'UFKA',
-            image_source: '../static_assets/studentenclubs/ufka.png',
+            image_source: 'assets/studentenclubs/ufka.png',
             description: '',
             department: 'Farmaceutische wetenschappen',
             website: 'ufka.eu',
             facebook_link: 'https://www.facebook.com/UniversitaireFarmaceutischeKringAntwerpen'
           }, {
             name: 'Translatio',
-            image_source: '../static_assets/studentenclubs/translatio.png',
+            image_source: 'assets/studentenclubs/translatio.png',
             description: '',
             department: 'Toegepaste taalkunde',
             website: 'clubtranslatio.be',
             facebook_link: 'https://www.facebook.com/studentenclub.translatio'
           }, {
             name: 'Wikings-NSK',
-            image_source: '../static_assets/studentenclubs/wikings_nsk.png',
+            image_source: 'assets/studentenclubs/wikings_nsk.png',
             description: '',
             department: 'TEW, HI(B) en SEW',
             website: 'wikings.be',
             facebook_link: 'https://www.facebook.com/wikings.antwerp'
           }, {
             name: 'WINAK',
-            image_source: '../static_assets/studentenclubs/winak.png',
+            image_source: 'assets/studentenclubs/winak.png',
             description: '',
             department: 'Wiskunde, Informatica en Natuurkunde',
             website: 'winak.be',
             facebook_link: 'https://www.facebook.com/WINAKantwerpen'
           }, {
             name: 'Unifac',
-            image_source: '../static_assets/studentenclubs/unifac.jpg',
+            image_source: 'assets/studentenclubs/unifac.jpg',
             description: '',
             notable: 'Overkoepelend, binnencampussen',
             website: 'unifac.be',
@@ -637,21 +637,21 @@
             }
           }, {
             name: 'ASK-Stuwer',
-            image_source: '../static_assets/studentenclubs/ask_stuwer.png',
+            image_source: 'assets/studentenclubs/ask_stuwer.png',
             description: '',
             notable: 'Overkoepelend, buitencampussen',
             website: 'ask-stuwer.be',
             facebook_link: 'https://www.facebook.com/Ask-Stuwer-676387159066322'
           }, {
             name: 'Andoverpia',
-            image_source: '../static_assets/studentenclubs/andoverpia.jpg',
+            image_source: 'assets/studentenclubs/andoverpia.jpg',
             description: '',
             notable: 'Regio Antwerpen',
             website: 'andoverpia.be',
             facebook_link: 'https://www.facebook.com/Andoverpia'
           }, {
             name: 'Nordkempus',
-            image_source: '../static_assets/studentenclubs/nordkempus.jpg',
+            image_source: 'assets/studentenclubs/nordkempus.jpg',
             description: '',
             notable: 'Regio Kempen',
             facebook_link: 'https://www.facebook.com/nordkempus.antwerpen'
